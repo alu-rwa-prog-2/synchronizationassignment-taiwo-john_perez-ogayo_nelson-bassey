@@ -2,7 +2,7 @@
 #include <semaphore.h> 
 #include <stdio.h> 
 
-#define NO_PHIL 9 
+#define NO_PHIL 5 
 #define HUNGRY_PHIL 1 
 #define THINKING_PHIL 2 
 #define EATING_PHIL 0 
@@ -10,13 +10,13 @@
 #define RIGHT (phnum + 1) % NO_PHIL
 
 int state[NO_PHIL]; 
-// int phil[NO_PHIL] = { 0, 1, 2, 3, 4 ,5,6,7,8}; 
+// int phil[NO_PHIL] = { 0, 1, 2, 3, 4}; 
 int phil[NO_PHIL];
 
 sem_t mutex; 
 sem_t S[NO_PHIL];
 
-// Function to test if the forks are available.If they are available, the philosophereats
+// Function to test if the forks are available.If they are available, the philosopher eats
 void eat(int phnum) 
 { 
 	if (state[phnum] == HUNGRY_PHIL 
